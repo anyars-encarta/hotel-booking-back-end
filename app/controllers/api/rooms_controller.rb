@@ -1,12 +1,12 @@
 class Api::RoomsController < ApplicationController
   def index
-    if params[:id]
-      room = Room.find(params[:id])
-      render json: room
-    else
-      rooms = Room.all
-      render json: rooms
-    end
+    rooms = Room.all
+    render json: rooms
+  end
+
+  def show
+    room = Room.find(params[:id])
+    render json: room
   end
 
   def destroy
