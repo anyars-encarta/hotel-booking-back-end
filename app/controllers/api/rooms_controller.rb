@@ -1,11 +1,33 @@
 class Api::RoomsController < ApplicationController
-  def rooms
-    rooms = Room.all
-    render json: rooms
+  def index
+    if params[:id]
+      room = Room.find(params[:id])
+      render json: room
+    else
+      rooms = Room.all
+      render json: rooms
+    end
   end
 
-  def show
+  def destroy
     room = Room.find(params[:id])
-    render json: room
+    room.destroy
+    head :no_content
+  end
+
+  def update
+    room = Room.find(params[:id])
+
+    if room.update(room_params)
+      render json: room
+    else
+      render json: { errors: room.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def room_param
+    params.require(:room).permit(:name, :room_type, :description, :image)
   end
 end
