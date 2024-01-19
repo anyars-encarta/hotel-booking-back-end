@@ -30,4 +30,9 @@ class Api::RoomsController < ApplicationController
   def room_param
     params.require(:room).permit(:name, :room_type, :description, :image)
   end
+
+  def show
+    room = Room.find(params[:id])
+    render json: room
+  end
 end
