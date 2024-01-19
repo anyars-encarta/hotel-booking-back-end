@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  def users
+  def index
     if params[:id]
       user = User.find(params[:id])
       render json: user

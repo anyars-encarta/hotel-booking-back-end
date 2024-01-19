@@ -1,5 +1,5 @@
 class Api::RoomsController < ApplicationController
-  def show
+  def index
     if params[:id]
       room = Room.find(params[:id])
       render json: room
