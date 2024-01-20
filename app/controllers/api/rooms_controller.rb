@@ -9,10 +9,14 @@ class Api::RoomsController < ApplicationController
     render json: room
   end
 
-  def destroy
-    room = Room.find(params[:id])
-    room.destroy
-    head :no_content
+  def create
+    room = Room.new(room_params)
+
+    if room.save
+      render json: room, status: :created
+    else
+      render json: { errors: room.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -25,6 +29,12 @@ class Api::RoomsController < ApplicationController
     end
   end
 
+  def destroy
+    room = Room.find(params[:id])
+    room.destroy
+    head :no_content
+  end
+  
   private
 
   def room_params
