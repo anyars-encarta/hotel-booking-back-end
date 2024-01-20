@@ -14,8 +14,8 @@ user3 = User.create(username: 'yussif', admin: false)
 user4 = User.create(username: 'salaamat', admin: false)
 
 # Categories
-cat1 = Category.create(name: 'standard', description: 'standard room with A/C, TV, and double-size bed', image: 'https://www.eliaermouhotel.com/uploads/photos/D1024/2019/02/standardroom_1878.jpg', number_of_rooms: 0, number_reserved: 0)
-cat2 = Category.create(name: 'executive', description: 'executive room with A/C, TV, Fridge, and queen- size bed', image: 'https://www.strandhotellimerick.ie/wp-content/uploads/2021/05/Main_Bedroom-Executive-Double-1-1366x768-fp_mm-fpoff_0_0.jpg', number_of_rooms: 0, number_reserved: 0)
+cat1 = Category.create(name: 'Standard', description: 'standard room with A/C, TV, and double-size bed', image: 'https://www.eliaermouhotel.com/uploads/photos/D1024/2019/02/standardroom_1878.jpg', number_of_rooms: 0, number_reserved: 0)
+cat2 = Category.create(name: 'Executive', description: 'executive room with A/C, TV, Fridge, and queen- size bed', image: 'https://www.strandhotellimerick.ie/wp-content/uploads/2021/05/Main_Bedroom-Executive-Double-1-1366x768-fp_mm-fpoff_0_0.jpg', number_of_rooms: 0, number_reserved: 0)
 cat3 = Category.create(name: 'VIP', description: 'VIP room with A/C, TV, bathroom water heater, and queen-size bed', image: 'https://www.frommers.com/system/media_items/attachments/000/855/448/s980/Palms-Two-Story-Sky-Villa-Bedroom-crop.jpg?1440441521', number_of_rooms: 0, number_reserved: 0)
 
 # Rooms

@@ -10,6 +10,12 @@ class Api::CategoriesController < ApplicationController
     render json: @category
   end
 
+  def rooms
+    category = Category.find(params[:id])
+    rooms = category.rooms
+    render json: rooms
+  end
+  
   private
 
   def set_category
