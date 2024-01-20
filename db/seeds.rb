@@ -13,11 +13,16 @@ user2 = User.create(username: 'encarta', admin: true)
 user3 = User.create(username: 'yussif', admin: false)
 user4 = User.create(username: 'salaamat', admin: false)
 
+# Categories
+cat1 = Category.create(name: 'standard', description: 'standard room with A/C, TV, and double-size bed', image: 'https://www.eliaermouhotel.com/uploads/photos/D1024/2019/02/standardroom_1878.jpg', number_of_rooms: 0, number_reserved: 0)
+cat2 = Category.create(name: 'executive', description: 'executive room with A/C, TV, Fridge, and queen- size bed', image: 'https://www.strandhotellimerick.ie/wp-content/uploads/2021/05/Main_Bedroom-Executive-Double-1-1366x768-fp_mm-fpoff_0_0.jpg', number_of_rooms: 0, number_reserved: 0)
+cat3 = Category.create(name: 'VIP', description: 'VIP room with A/C, TV, bathroom water heater, and queen-size bed', image: 'https://www.frommers.com/system/media_items/attachments/000/855/448/s980/Palms-Two-Story-Sky-Villa-Bedroom-crop.jpg?1440441521', number_of_rooms: 0, number_reserved: 0)
+
 # Rooms
-room1 = Room.create(name: 'Room 1', room_type: 'standard', description: 'standard room with A/C, TV, and double-size bed', image: 'https://www.eliaermouhotel.com/uploads/photos/D1024/2019/02/standardroom_1878.jpg')
-room2 = Room.create(name: 'Room 2', room_type: 'executive', description: 'executive room with A/C, TV, Fridge, and queen- size bed', image: 'https://www.strandhotellimerick.ie/wp-content/uploads/2021/05/Main_Bedroom-Executive-Double-1-1366x768-fp_mm-fpoff_0_0.jpg')
-room3 = Room.create(name: 'Room 3', room_type: 'standard', description: 'standard room with A/C, TV, and double-size bed', image: 'https://www.eliaermouhotel.com/uploads/photos/D1024/2019/02/standardroom_1878.jpg')
-room4 = Room.create(name: 'Room 4', room_type: 'VIP', description: 'VIP room with A/C, TV, bathroom water heater, and queen-size bed', image: 'https://www.frommers.com/system/media_items/attachments/000/855/448/s980/Palms-Two-Story-Sky-Villa-Bedroom-crop.jpg?1440441521')
+room1 = Room.create(name: 'Room 1', category_id: cat1.id)
+room2 = Room.create(name: 'Room 2', category_id: cat2.id)
+room3 = Room.create(name: 'Room 3', category_id: cat1.id)
+room4 = Room.create(name: 'Room 4', category_id: cat3.id)
 
 # Reservations
 reserve1 = Reservation.create(user_id: user1.id, room_id: room3.id, date: '2024-01-31', city: 'Kumasi')
