@@ -1,11 +1,18 @@
 class Api::UsersController < ApplicationController
+  before_action :set_user, only: [:show]
+
   def index
-    if params[:id]
-      user = User.find(params[:id])
-      render json: user
-    else
-      users = User.all
-      render json: users
-    end
+    users = User.all
+    render json: users
+  end
+
+  def show
+    render json: @user
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

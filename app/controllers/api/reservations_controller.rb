@@ -15,8 +15,10 @@ class Api::ReservationsController < ApplicationController
       city: params[:city]
     )
 
-    reservation.save
-
-    render json: reservation
+    if reservation.save
+      render json: reservation
+    else
+      render json: { errors: reservation.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 end
