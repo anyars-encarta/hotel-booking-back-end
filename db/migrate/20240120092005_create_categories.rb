@@ -6,6 +6,7 @@ class CreateCategories < ActiveRecord::Migration[7.1]
       t.string :image
       t.integer :number_of_rooms, default: 0
       t.integer :number_reserved, default: 0
+      t.integer :price, default: 0
 
       t.timestamps
     end

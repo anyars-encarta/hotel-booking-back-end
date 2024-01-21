@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_092005) do
     t.string "image"
     t.integer "number_of_rooms"
     t.integer "number_reserved"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
