@@ -1,6 +1,6 @@
 class Api::CategoriesController < ApplicationController
   before_action :set_category, only: [:show]
-  
+
   def index
     categories = Category.all
     render json: categories
@@ -15,7 +15,7 @@ class Api::CategoriesController < ApplicationController
     rooms = category.rooms
     render json: rooms
   end
-  
+
   def create
     category = Category.new(category_params)
 
