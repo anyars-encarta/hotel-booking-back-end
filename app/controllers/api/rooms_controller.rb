@@ -13,6 +13,9 @@ class Api::RoomsController < ApplicationController
     room = Room.new(room_params)
 
     if room.save
+      category = Category.find(room.category_id)
+      category.update(number_of_rooms: category.number_of_rooms + 1)
+
       render json: room, status: :created
     else
       render json: { errors: room.errors.full_messages }, status: :unprocessable_entity
@@ -32,9 +35,13 @@ class Api::RoomsController < ApplicationController
   def destroy
     room = Room.find(params[:id])
     room.destroy
+
+    category = Category.find(room.category_id)
+    category.update(number_of_rooms: category.number_of_rooms - 1)
+
     head :no_content
   end
-  
+
   private
 
   def room_params
