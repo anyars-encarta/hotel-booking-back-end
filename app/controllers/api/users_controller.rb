@@ -5,6 +5,7 @@ class Api::UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    render json: users
   end
 
   # GET /users/1
@@ -49,5 +50,15 @@ class Api::UsersController < ApplicationController
   # Only allow a list of trusted parameters through.
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
+
+  def show
+    render json: @user
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
