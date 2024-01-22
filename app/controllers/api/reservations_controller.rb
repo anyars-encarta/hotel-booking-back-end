@@ -1,7 +1,7 @@
 class Api::ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
-    render json: @reservations
+    render json: ReservationSerializer.new(@reservations).serializable_hash[:data].map {  |item| item[:attributes] }
   end
 
   def create

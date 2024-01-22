@@ -8,10 +8,16 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 # Users
-user1 = User.create(username: 'anyars', admin: true)
-user2 = User.create(username: 'encarta', admin: true)
-user3 = User.create(username: 'yussif', admin: false)
-user4 = User.create(username: 'salaamat', admin: false)
+# user1 = User.create(username: 'anyars', admin: true)
+# user2 = User.create(username: 'encarta', admin: true)
+# user3 = User.create(username: 'yussif', admin: false)
+# user4 = User.create(username: 'salaamat', admin: false)
+
+room1 = Room.create(name: '001', category_id: 1)
+room2 = Room.create(name: '002', category_id: 1)
+room3 = Room.create(name: '003', category_id: 2)
+room4 = Room.create(name: '004', category_id: 3)
+
 
 # Categories
 # cat1 = Category.create(name: 'Standard', description: 'standard room with A/C, TV, and double-size bed', image: 'https://www.eliaermouhotel.com/uploads/photos/D1024/2019/02/standardroom_1878.jpg', number_of_rooms: 0, number_reserved: 0, price: 120)
