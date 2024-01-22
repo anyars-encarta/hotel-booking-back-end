@@ -19,9 +19,12 @@ class Api::CategoriesController < ApplicationController
   def create
     category = Category.new(category_params)
 
-    if category.save
+    if category.persisted?
+      render json: category, status: :ok
+    elsif category.save
       render json: category, status: :created
     else
+      Rails.logger.error("Error saving category: #{category.errors.full_messages}")
       render json: { errors: category.errors.full_messages }, status: :unprocessable_entity
     end
   end
@@ -33,6 +36,6 @@ class Api::CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:name, :description, :image, :number_of_rooms)
+    params.require(:category).permit(:name, :description, :image, :number_of_rooms, :number_reserved, :price)
   end
 end

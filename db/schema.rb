@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_092005) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "image"
+    t.binary "image"
     t.integer "number_of_rooms"
     t.integer "number_reserved"
     t.integer "price"
