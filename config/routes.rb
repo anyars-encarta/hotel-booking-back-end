@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get 'users', to: 'users#users'
-    get 'rooms', to: 'rooms#rooms'
+    # get 'rooms', to: 'rooms#rooms'
     get 'users/:id', to: 'users#show'
     get 'categories/:id', to: 'categories#show'
 
