@@ -4,7 +4,10 @@ class ReservationSerializer
   attribute :room do |reservation|
     reservation.room
   end
-  attribute :room_category do |reservation|
-    reservation.room.category
+  attribute :user do |reservation|
+    {
+      username: reservation.user.username,
+      email: reservation.user.email
+    }
   end
 end
