@@ -36,7 +36,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_092005) do
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"
-    t.integer "category_id"
+    t.string "room_type"
+    t.text "description"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
