@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/current_user', to: 'current_user#index'
+  get 'current_user', to: 'current_user#index'
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
@@ -16,7 +16,6 @@ Rails.application.routes.draw do
     # get 'rooms', to: 'rooms#rooms'
     get 'users/:id', to: 'users#show'
     get 'categories/:id', to: 'categories#show'
-
     resources :users, only: [:index, :create, :update, :destroy]
     resources :rooms, only: [:index, :create, :update, :destroy, :show]
     resources :reservations, only: [:index, :create, :update, :destroy]
@@ -24,4 +23,5 @@ Rails.application.routes.draw do
       get 'rooms', on: :member
     end
   end
+
 end
