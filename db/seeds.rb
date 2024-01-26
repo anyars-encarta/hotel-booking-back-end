@@ -18,8 +18,3 @@ room2 = Room.create(name: '002', category_id: 1)
 room3 = Room.create(name: '003', category_id: 2)
 room4 = Room.create(name: '004', category_id: 3)
 
-
-# Categories
-# cat1 = Category.create(name: 'Standard', description: 'standard room with A/C, TV, and double-size bed', image: 'https://www.eliaermouhotel.com/uploads/photos/D1024/2019/02/standardroom_1878.jpg', number_of_rooms: 0, number_reserved: 0, price: 120)
-# cat2 = Category.create(name: 'Executive', description: 'executive room with A/C, TV, Fridge, and queen- size bed', image: 'https://www.strandhotellimerick.ie/wp-content/uploads/2021/05/Main_Bedroom-Executive-Double-1-1366x768-fp_mm-fpoff_0_0.jpg', number_of_rooms: 0, number_reserved: 0, price: 250)
-# cat3 = Category.create(name: 'VIP', description: 'standard room with A/C, TV, and double-size bed', image: 'https://www.eliaermouhotel.com/uploads/photos/D1024/2019/02/standardroom_1878.jpg', number_of_rooms: 0, number_reserved: 0, price: 350)
