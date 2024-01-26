@@ -21,6 +21,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
 - [🚀 Live Demo](#live-demo)
+- [🚀 Front-end Link](#front-end)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -69,6 +70,14 @@
 ### LIVE DEMO
 
 > Watch [live](live.link.goes.here) demo of the app or visit the app [page](deployment.site.goes.here) to use the app.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FRONT END -->
+
+### FRONT END
+
+> View the [Front-end](https://github.com/anyars-encarta/hotel-booking-front-end.git) part of the project here.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
