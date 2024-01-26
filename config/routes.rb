@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :create, :update, :destroy]
     resources :rooms, only: [:index, :create, :update, :destroy, :show]
     resources :reservations, only: [:index, :create, :update, :destroy]
-    resources :categories, only: [:index, :create, :update, :destroy] do
+    resources :categories, only: [:index, :create, :update, :destroy, :show] do
       get 'rooms', on: :member
     end
   end

@@ -2,12 +2,13 @@ class Api::CategoriesController < ApplicationController
   before_action :set_category, only: [:show]
   
   def index
-    categories = Category.all
-    render json: categories
+    @categories = Category.all
+    render json: @categories
   end
 
   def show
-    render json: @category
+    # render json: @category
+    render json: CategorySerializer.new(@category).serializable_hash[:data][:attributes]
   end
 
   def rooms
