@@ -1,6 +1,6 @@
 class ReservationSerializer
   include JSONAPI::Serializer
-  attributes :id, :date, :city
+  attributes :id, :created_at, :city
   attribute :room do |reservation|
     reservation.room
   end
