@@ -3,7 +3,7 @@ class Api::ReservationsController < ApplicationController
 
   def index
     @reservations = Reservation.all
-    render json: ReservationSerializer.new(@reservations).serializable_hash[:data].map {  |item| item[:attributes] }
+    render json: ReservationSerializer.new(@reservations).serializable_hash[:data].map { |item| item[:attributes] }
   end
 
   def create
@@ -14,12 +14,12 @@ class Api::ReservationsController < ApplicationController
 
     reservation = Reservation.new(
       user_id: @user.id,
-      room_id: @room.id,
+      room_id: @room.id
     )
 
 
     if reservation.save
-      @room.update(reserved: true);
+      @room.update(reserved: true)
       render json: reservation
     else
       render json: { errors: reservation.errors.full_messages }, status: :unprocessable_entity
@@ -28,11 +28,9 @@ class Api::ReservationsController < ApplicationController
 
   def destroy
     @room = Room.find(params[:id])
-    if @room.reservations.destroy_all
-      @room.update(reserved: false);
-      render json: @room
+    return unless @room.reservations.destroy_all
 
-    end
-
+    @room.update(reserved: false)
+    render json: @room
   end
 end

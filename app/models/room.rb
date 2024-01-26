@@ -3,6 +3,6 @@ class Room < ApplicationRecord
   has_many :reservations
 
   def update_reserve
-    self.update(reserved: !self.reserved);
+    update(reserved: !reserved)
   end
 end

@@ -6,8 +6,4 @@ class User < ApplicationRecord
          :jwt_authenticatable, jwt_revocation_strategy: self
   has_many :reservations, dependent: :destroy
   validates :username, presence: true, uniqueness: true
-
-  def jwt_payload
-    super
-  end
 end
