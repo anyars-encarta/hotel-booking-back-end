@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   namespace :api do
-    get 'users', to: 'users#users'
+    get 'users', to: 'users#index'
     # get 'rooms', to: 'rooms#rooms'
     get 'users/:id', to: 'users#show'
     get 'categories/:id', to: 'categories#show'
