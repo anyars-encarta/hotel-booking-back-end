@@ -11,12 +11,10 @@ class Api::ReservationsController < ApplicationController
     @user = User.find(params[:user_id])
     @room = Room.find(params[:room_id])
 
-
     reservation = Reservation.new(
       user_id: @user.id,
       room_id: @room.id
     )
-
 
     if reservation.save
       @room.update(reserved: true)
