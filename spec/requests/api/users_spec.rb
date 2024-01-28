@@ -1,7 +1,6 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/users', type: :request do
-
   let(:user_params) do
     {
       user: {
@@ -41,7 +40,6 @@ RSpec.describe 'api/users', type: :request do
       response(422, 'invalid request') do
         let(:user) { { user: { username: 'testuser', email: 'test@gmail.com' } } }
         run_test!
-
       end
     end
   end

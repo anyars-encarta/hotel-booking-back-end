@@ -20,7 +20,6 @@ class Api::UsersController < ApplicationController
     end
   end
 
-
   def update
     if @user.update(user_params)
       render :show, status: :ok
@@ -28,7 +27,6 @@ class Api::UsersController < ApplicationController
       render json: @user.errors, status: :unprocessable_entity
     end
   end
-
 
   def destroy
     @user.destroy!

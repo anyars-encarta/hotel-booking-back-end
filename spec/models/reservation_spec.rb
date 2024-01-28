@@ -10,7 +10,6 @@ RSpec.describe Reservation, type: :model do
       reservation = Reservation.new
       expect(reservation).to respond_to(:room)
     end
-
   end
 
   describe 'validations' do

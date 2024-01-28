@@ -13,7 +13,6 @@ RSpec.describe User, type: :model do
       user = User.new(email: 'test@gmail.com', username: '', password: 'password')
       expect(user).not_to be_valid
       expect(user.errors[:username]).to include("can't be blank")
-
     end
   end
 end

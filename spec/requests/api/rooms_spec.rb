@@ -15,7 +15,7 @@ RSpec.describe Api::RoomsController, type: :request do
                    name: { type: :string },
                    category_id: { type: :integer }
                  },
-                 required: ['id', 'name', 'category_id']
+                 required: %w[id name category_id]
                }
 
         run_test! do
@@ -34,7 +34,7 @@ RSpec.describe Api::RoomsController, type: :request do
           name: { type: :string },
           category_id: { type: :integer }
         },
-        required: ['name', 'category_id']
+        required: %w[name category_id]
       }
 
       response '201', 'Created' do
@@ -46,7 +46,7 @@ RSpec.describe Api::RoomsController, type: :request do
                  name: { type: :string },
                  category_id: { type: :integer }
                },
-               required: ['id', 'name', 'category_id']
+               required: %w[id name category_id]
       end
 
       response '422', 'Unprocessable Entity' do
@@ -84,7 +84,7 @@ RSpec.describe Api::RoomsController, type: :request do
                  name: { type: :string },
                  category_id: { type: :integer }
                },
-               required: ['id', 'name', 'category_id']
+               required: %w[id name category_id]
       end
     end
 

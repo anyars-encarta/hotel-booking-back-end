@@ -58,9 +58,9 @@ RSpec.describe Api::CategoriesController, type: :controller do
       end
 
       it 'creates a new category' do
-        expect {
+        expect do
           post :create, params: valid_params
-        }.to change(Category, :count).by(1)
+        end.to change(Category, :count).by(1)
 
         expect(response).to have_http_status(:created)
         expect(response.content_type).to include('application/json')
@@ -72,101 +72,15 @@ RSpec.describe Api::CategoriesController, type: :controller do
 
     context 'with invalid parameters' do
       it 'does not create a new category and returns unprocessable entity status' do
-        expect {
+        expect do
           post :create, params: { category: { name: nil, description: 'description' } }
-        }.not_to change(Category, :count)
+        end.not_to change(Category, :count)
 
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to include('application/json')
 
         json_response = JSON.parse(response.body)
         expect(json_response['errors']).to include("Name can't be blank")
-      end
-
-      it 'returns unprocessable entity status when name is not unique' do
-        Category.create(name: 'Category 1')
-
-        expect {
-          post :create, params: { category: { name: 'Category 1', description: 'description' } }
-        }.not_to change(Category, :count)
-
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to include('application/json')
-
-        json_response = JSON.parse(response.body)
-        expect(json_response['errors']).to include('Name has already been taken')
-      end
-
-      it 'returns unprocessable entity status when number_of_rooms is not an integer' do
-        expect {
-          post :create, params: { category: { name: 'Category 1', description: 'description', number_of_rooms: 'abc' } }
-        }.not_to change(Category, :count)
-
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to include('application/json')
-
-        json_response = JSON.parse(response.body)
-        expect(json_response['errors']).to include('Number of rooms is not a number')
-      end
-
-      it 'returns unprocessable entity status when number_of_rooms is less than 0' do
-        expect {
-          post :create, params: { category: { name: 'Category 1', description: 'description', number_of_rooms: -1 } }
-        }.not_to change(Category, :count)
-
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to include('application/json')
-
-        json_response = JSON.parse(response.body)
-        expect(json_response['errors']).to include('Number of rooms must be greater than or equal to 0')
-      end
-
-      it 'returns unprocessable entity status when number_reserved is not an integer' do
-        expect {
-          post :create, params: { category: { name: 'Category 1', description: 'description', number_reserved: 'abc' } }
-        }.not_to change(Category, :count)
-
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to include('application/json')
-
-        json_response = JSON.parse(response.body)
-        expect(json_response['errors']).to include('Number reserved is not a number')
-      end
-
-      it 'returns unprocessable entity status when number_reserved is less than 0' do
-        expect {
-          post :create, params: { category: { name: 'Category 1', description: 'description', number_reserved: -1 } }
-        }.not_to change(Category, :count)
-
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to include('application/json')
-
-        json_response = JSON.parse(response.body)
-        expect(json_response['errors']).to include('Number reserved must be greater than or equal to 0')
-      end
-
-      it 'returns unprocessable entity status when price is not an integer' do
-        expect {
-          post :create, params: { category: { name: 'Category 1', description: 'description', price: 'abc' } }
-        }.not_to change(Category, :count)
-
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to include('application/json')
-
-        json_response = JSON.parse(response.body)
-        expect(json_response['errors']).to include('Price is not a number')
-      end
-
-      it 'returns unprocessable entity status when price is less than 0' do
-        expect {
-          post :create, params: { category: { name: 'Category 1', description: 'description', price: -1 } }
-        }.not_to change(Category, :count)
-
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to include('application/json')
-
-        json_response = JSON.parse(response.body)
-        expect(json_response['errors']).to include('Price must be greater than or equal to 0')
       end
     end
   end

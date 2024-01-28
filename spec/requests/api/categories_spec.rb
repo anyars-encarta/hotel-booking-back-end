@@ -8,18 +8,18 @@ RSpec.describe Api::CategoriesController, type: :request do
 
       response '200', 'OK' do
         schema type: :array,
-          items: {
-            properties: {
-              id: { type: :integer },
-              name: { type: :string },
-              description: { type: :string },
-              image: { type: :string },
-              number_of_rooms: { type: :integer },
-              number_reserved: { type: :integer },
-              price: { type: :integer }
-            },
-            required: %w[id name description]
-          }
+               items: {
+                 properties: {
+                   id: { type: :integer },
+                   name: { type: :string },
+                   description: { type: :string },
+                   image: { type: :string },
+                   number_of_rooms: { type: :integer },
+                   number_reserved: { type: :integer },
+                   price: { type: :integer }
+                 },
+                 required: %w[id name description]
+               }
 
         examples 'application/json' => [
           {
@@ -49,7 +49,6 @@ RSpec.describe Api::CategoriesController, type: :request do
     post 'Creates a new category' do
       tags 'Categories'
       consumes 'application/json'
-      produces 'application/json'
       parameter name: :category, in: :body, schema: {
         type: :object,
         properties: {
@@ -96,16 +95,16 @@ RSpec.describe Api::CategoriesController, type: :request do
 
       response '200', 'OK' do
         schema type: :object,
-          properties: {
-            id: { type: :integer },
-            name: { type: :string },
-            description: { type: :string },
-            image: { type: :string },
-            number_of_rooms: { type: :integer },
-            number_reserved: { type: :integer },
-            price: { type: :integer }
-          },
-          required: %w[id name description]
+               properties: {
+                 id: { type: :integer },
+                 name: { type: :string },
+                 description: { type: :string },
+                 image: { type: :string },
+                 number_of_rooms: { type: :integer },
+                 number_reserved: { type: :integer },
+                 price: { type: :integer }
+               },
+               required: %w[id name description]
       end
       response '404', 'Not Found' do
         let(:id) { 999 }

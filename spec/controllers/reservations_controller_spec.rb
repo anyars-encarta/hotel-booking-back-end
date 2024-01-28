@@ -11,8 +11,8 @@ RSpec.describe Api::ReservationsController, type: :controller do
       user = User.create(email: 'test@gmail.com', username: 'test', password: 'password')
       category = Category.create(name: 'Category 1')
       room = Room.create(name: 'Room 1', category_id: category.id)
-      reservation1 = Reservation.create(user_id: user.id, room_id: room.id)
-      reservation2 = Reservation.create(user_id: user.id, room_id: room.id)
+      Reservation.create(user_id: user.id, room_id: room.id)
+      Reservation.create(user_id: user.id, room_id: room.id)
       expect(Reservation.count).to eq(2)
     end
   end
@@ -35,9 +35,9 @@ RSpec.describe Api::ReservationsController, type: :controller do
           room_id: room.id
         }
 
-        expect {
+        expect do
           post :create, params: valid_params
-        }.to change(Reservation, :count).by(1)
+        end.to change(Reservation, :count).by(1)
 
         expect(response).to have_http_status(:ok)
       end
@@ -49,7 +49,7 @@ RSpec.describe Api::ReservationsController, type: :controller do
       user = User.create(email: 'test@gmail.com', username: 'test', password: 'password')
       category = Category.create(name: 'Category 1')
       room = Room.create(name: 'Room 1', category_id: category.id)
-      reservation = Reservation.create(user_id: user.id, room_id: room.id)
+      Reservation.create(user_id: user.id, room_id: room.id)
       expect(Reservation.count).to eq(1)
 
       delete :destroy, params: { id: room.id }
@@ -61,8 +61,6 @@ RSpec.describe Api::ReservationsController, type: :controller do
 
       user.reload
       expect(user.reservations.count).to eq(0)
-
     end
   end
-
 end

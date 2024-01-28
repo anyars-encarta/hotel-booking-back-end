@@ -7,7 +7,6 @@ RSpec.describe Room, type: :model do
       expect(room).not_to be_valid
       expect(room.errors[:name]).to include("can't be blank")
     end
-
   end
 
   describe '#update_reserve' do
