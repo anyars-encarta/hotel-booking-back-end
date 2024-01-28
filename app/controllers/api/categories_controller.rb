@@ -7,14 +7,7 @@ class Api::CategoriesController < ApplicationController
   end
 
   def show
-    # render json: @category
     render json: CategorySerializer.new(@category).serializable_hash[:data][:attributes]
-  end
-
-  def rooms
-    category = Category.find(params[:id])
-    rooms = category.rooms
-    render json: rooms
   end
 
   def create
