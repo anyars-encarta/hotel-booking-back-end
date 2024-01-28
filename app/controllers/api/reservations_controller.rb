@@ -1,13 +1,10 @@
 class Api::ReservationsController < ApplicationController
-  # before_action :authenticate_user!
-
   def index
     @reservations = Reservation.all
     render json: ReservationSerializer.new(@reservations).serializable_hash[:data].map { |item| item[:attributes] }
   end
 
   def create
-    # p params
     @user = User.find(params[:user_id])
     @room = Room.find(params[:room_id])
 
