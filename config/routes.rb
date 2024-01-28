@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
+
+  root to: redirect('/api-docs')
+
   get 'current_user', to: 'current_user#index'
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
@@ -13,7 +18,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     get 'users', to: 'users#index'
-    # # get 'rooms', to: 'rooms#rooms'
     get 'users/:id', to: 'users#show'
     get 'categories/:id', to: 'categories#show'
     resources :users, only: [:index, :create, :update, :destroy]
