@@ -4,7 +4,7 @@
 
  <!-- LOGO -->
 
-  <img src="./app/assets/images/hotel.jpg" alt="logo" width="140"  height="auto" />
+  <img src="./app/assets/images/hotel-png-9.png" alt="logo" width="140"  height="auto" />
   <br/>
 
 <!-- MAIN HEADING -->
