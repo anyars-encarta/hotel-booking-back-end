@@ -41,6 +41,8 @@
 # 📖 Hotel Booking System - Back-end <a name="about-project"></a>
 
 > Hotel Booking System - Back-end is the back-end of an app designed where clients could make reservations for hotel rooms.
+>
+> Hotel Booking System - Back-end is the back-end of an app designed where clients could make reservations for hotel rooms.
 
 ## 🛠 Built With <a name="built-with"></a>
 1. Ruby
