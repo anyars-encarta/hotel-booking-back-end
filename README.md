@@ -169,6 +169,7 @@ You can deploy this project using:
 - [ ] **Add Recreational Center Reservations**
 - [ ] **Cancel Reservations**
 - [ ] **Change Reservations**
+- [ ] **Add payment system**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
