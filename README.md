@@ -61,7 +61,9 @@
 ### Key Features <a name="key-features"></a>
 
 > - Add new Hotel Rooms.
-> - Make Resrevations for Rooms
+> - Make Reservations for Rooms
+> - Update rooms.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -126,7 +128,7 @@ rspec
 ### Deployment
 
 You can deploy this project using:
->1.  GitHub Pages
+>1. GitHub Pages
 >2. Render
 >3. Any other hosting site
 
@@ -167,6 +169,7 @@ You can deploy this project using:
 - [ ] **Add Recreational Center Reservations**
 - [ ] **Cancel Reservations**
 - [ ] **Change Reservations**
+- [ ] **Add payment system**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -195,9 +198,9 @@ Contributions, issues, and feature requests are welcome!
 <!-- FAQS -->
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
-- **How were the Linters utilised?**
+- **How were the Linters  utilized?**
 
-  - The Linters (Rubocop) were utilised with the help of resources provided by [@microverseinc](https://github.com/microverseinc).
+  - The Linters (Rubocop) were utilized  with the help of resources provided by [@microverseinc](https://github.com/microverseinc).
 
 - **What new features should be expected in the next release of the project?**
 
