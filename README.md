@@ -197,7 +197,7 @@ Contributions, issues, and feature requests are welcome!
 <!-- FAQS -->
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
-- **How were the Linters utilised?**
+- **How were the Linters  utilized?**
 
   - The Linters (Rubocop) were utilized  with the help of resources provided by [@microverseinc](https://github.com/microverseinc).
 
