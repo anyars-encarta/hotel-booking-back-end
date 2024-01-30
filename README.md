@@ -61,7 +61,9 @@
 ### Key Features <a name="key-features"></a>
 
 > - Add new Hotel Rooms.
-> - Make Resrevations for Rooms
+> - Make Reservations for Rooms
+> - Update rooms.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
