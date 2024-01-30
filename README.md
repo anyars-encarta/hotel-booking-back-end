@@ -128,7 +128,7 @@ rspec
 ### Deployment
 
 You can deploy this project using:
->1.  GitHub Pages
+>1. GitHub Pages
 >2. Render
 >3. Any other hosting site
 
