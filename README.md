@@ -20,6 +20,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+- [📝 Kanban Board](#kanban-board)
 - [🚀 Live Demo](#live-demo)
 - [🚀 Front-end Link](#front-end)
 - [💻 Getting Started](#getting-started)
@@ -64,6 +65,14 @@
 > - Make Reservations for Rooms
 > - Update rooms.
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- KANBAN BOARD -->
+
+### KANBAN BOARD
+
+> View the [Kanban board](https://github.com/users/anyars-encarta/projects/3) for the project here.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
