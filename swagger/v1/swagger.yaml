@@ -1,0 +1,265 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/categories":
+    get:
+      summary: Retrieves all categories
+      tags:
+      - Categories
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              examples:
+                example_0:
+                  value:
+                  - id: 1
+                    name: Category 1
+                    description: Description 1
+                    image: example.jpg
+                    number_of_rooms: 10
+                    number_reserved: 5
+                    price: 100
+                  - id: 2
+                    name: Category 2
+                    description: Description 2
+                    image: example2.jpg
+                    number_of_rooms: 5
+                    number_reserved: 2
+                    price: 200
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    image:
+                      type: string
+                    number_of_rooms:
+                      type: integer
+                    number_reserved:
+                      type: integer
+                    price:
+                      type: integer
+                  required:
+                  - id
+                  - name
+                  - description
+    post:
+      summary: Creates a new category
+      tags:
+      - Categories
+      parameters: []
+      responses:
+        '201':
+          description: Created
+        '422':
+          description: Unprocessable Entity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                image:
+                  type: string
+                number_of_rooms:
+                  type: integer
+                number_reserved:
+                  type: integer
+                price:
+                  type: integer
+              required:
+              - name
+              - description
+  "/api/categories/{id}":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    get:
+      summary: Retrieves a specific category
+      tags:
+      - Categories
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '404':
+          description: Not Found
+  "/api/rooms":
+    get:
+      summary: Retrieves all rooms
+      tags:
+      - Rooms
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    category_id:
+                      type: integer
+                  required:
+                  - id
+                  - name
+                  - category_id
+    post:
+      summary: Creates a new room
+      tags:
+      - Rooms
+      parameters: []
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  category_id:
+                    type: integer
+                required:
+                - id
+                - name
+                - category_id
+        '422':
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                required:
+                - errors
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                category_id:
+                  type: integer
+              required:
+              - name
+              - category_id
+  "/api/rooms/{id}":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieves a room
+      tags:
+      - Rooms
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  category_id:
+                    type: integer
+                required:
+                - id
+                - name
+                - category_id
+    delete:
+      summary: Deletes a room
+      tags:
+      - Rooms
+      responses:
+        '204':
+          description: No Content
+  "/api/users":
+    post:
+      summary: create user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: successful
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    username:
+                      type: string
+                    email:
+                      type: string
+                    password:
+                      type: string
+                    password_confirmation:
+                      type: string
+  "/api/users/{id}":
+    get:
+      summary: show user
+      tags:
+      - Users
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+        '404':
+          description: user not found
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
