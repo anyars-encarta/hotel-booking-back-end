@@ -10,8 +10,8 @@
 # Users
 
 # Categories
-cat1 = Category.create(name: 'Standard', description: 'standard room with A/C, TV, and double-size bed', image: 'https://www.eliaermouhotel.com/uploads/photos/D1024/2019/02/standardroom_1878.jpg', number_of_rooms: 0, number_reserved: 0, price: 120)
-cat2 = Category.create(name: 'Executive', description: 'Executive room with A/C, TV, Fridge, and queen- size bed', image: 'https://www.strandhotellimerick.ie/wp-content/uploads/2021/05/Main_Bedroom-Executive-Double-1-1366x768-fp_mm-fpoff_0_0.jpg', number_of_rooms: 0, number_reserved: 0, price: 250)
+cat1 = Category.create(name: 'Standard', description: 'standard room with A/C, TV, and double-size bed', image: 'https://www.eliaermouhotel.com/uploads/photos/D1024/2019/02/standardroom_1878.jpg', number_of_rooms: 2, number_reserved: 0, price: 120)
+cat2 = Category.create(name: 'Executive', description: 'Executive room with A/C, TV, Fridge, and queen- size bed', image: 'https://www.strandhotellimerick.ie/wp-content/uploads/2021/05/Main_Bedroom-Executive-Double-1-1366x768-fp_mm-fpoff_0_0.jpg', number_of_rooms: 1, number_reserved: 0, price: 250)
 
 # Rooms
 room1 = Room.create(name: 'Room 1', category_id: cat1.id, reserved: false)
