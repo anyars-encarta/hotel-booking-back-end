@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  username: postgres
   url: <%= ENV['DATABASE_URL'] %>
-  password: <%= ENV["HOTEL_BOOKING_BACK_END_DATABASE_PASSWORD"] %>
