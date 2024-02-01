@@ -72,6 +72,7 @@
 ### LIVE DEMO
 
 > Watch [live](https://www.loom.com/share/445705ad5bd14ff9b62f77d877784b8a) demo of the app or visit the app [page](https://hotel-booking-3wof.onrender.com) to use the app.
+
 > API Link [API](https://hotel-booking-5vj9.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
