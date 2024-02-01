@@ -14,7 +14,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '>= 5.0'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+gem 'jbuilder'
 
 # gem 'sprockets-rails'
 
@@ -46,7 +46,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
 
   gem 'rspec-rails'
-  
+
   gem 'rswag-specs'
 end
 
