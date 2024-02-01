@@ -20,6 +20,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+- [📝 Kanban Board](#kanban-board)
 - [🚀 Live Demo](#live-demo)
 - [🚀 Front-end Link](#front-end)
 - [💻 Getting Started](#getting-started)
@@ -67,6 +68,18 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- KANBAN BOARD -->
+
+### KANBAN BOARD
+
+> View the [Kanban board](https://github.com/users/anyars-encarta/projects/3) for the project here.
+
+> View the initial [screenshot](https://drive.google.com/file/d/1QbYbGTYyTWIV08FXBh6QW4t0LYBkSUw0/view?usp=sharing) of the Kanban board here.
+
+> The project had a final number of **4** team members.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- LIVE DEMO -->
 
 ### LIVE DEMO
@@ -74,6 +87,7 @@
 > Watch [live](https://www.loom.com/share/445705ad5bd14ff9b62f77d877784b8a) demo of the app or visit the app [page](https://hotel-booking-3wof.onrender.com) to use the app.
 
 > API Link [API](https://hotel-booking-5vj9.onrender.com)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
